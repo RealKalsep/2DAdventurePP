@@ -8,7 +8,7 @@ int tempWidth, tempHeight;
 void gridWidth() {
 	cout << "Grid width (min 2, max 50): ";
 	cin >> tempWidth;
-	if (tempWidth < 2 && tempWidth > 50) {
+	if (tempWidth < 2 || tempWidth > 50) {
 		cout << "Invalid size!" << endl;
 		gridWidth();
 	}
@@ -18,7 +18,7 @@ void gridWidth() {
 void gridHeight() {
 	cout << "Grid height (min 2, max 50): ";
 	cin >> tempHeight;
-	if (tempHeight < 2 && tempHeight > 50) {
+	if (tempHeight < 2 || tempHeight > 50) {
 		cout << "Invalid size!" << endl;
 		gridHeight();
 	}
