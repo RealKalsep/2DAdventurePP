@@ -1,14 +1,33 @@
-#include <iostream>
+﻿#include <iostream>
+#include "grid.h"
 using namespace std;
 
-int width = 10, height = 5;
+int tempWidth, tempHeight;
+//char key;
+
+void gridWidth() {
+	cout << "Grid width (min 2, max 50): ";
+	cin >> tempWidth;
+	if (tempWidth < 2 && tempWidth > 50) {
+		cout << "Invalid size!" << endl;
+		gridWidth();
+	}
+	width = tempWidth;
+}
+
+void gridHeight() {
+	cout << "Grid height (min 2, max 50): ";
+	cin >> tempHeight;
+	if (tempHeight < 2 && tempHeight > 50) {
+		cout << "Invalid size!" << endl;
+		gridHeight();
+	}
+	height = tempHeight;
+}
 
 int main() {
-	for (int y = 0; y < height; y++) {
-		for (int x = 0; x < width - 1; x++) {
-			cout << "#";
-		}
-		cout << "#" << endl;
-	}
-	return 0;
+	gridWidth();
+	gridHeight();
+	grid();
+	return 1;
 }
